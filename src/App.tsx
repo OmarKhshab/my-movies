@@ -1,12 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
+import MovieContainer from './components/movies-container/MovieContianer';
+import Navigation from './components/navigation/Navigation';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Fragment>
+    <Navigation />
+    <MovieContainer />
+    </Fragment>
   );
 }
 
