@@ -28,7 +28,7 @@ function MovieContainer() {
  const handledeleteMovie = (movie: movie) => {
   console.log(movie.id)
   const currentMovies = movies.filter((currMovie) => {
-    return currMovie.id != movie.id;
+    return currMovie.id !== movie.id;
   })
   movies = currentMovies;
   
