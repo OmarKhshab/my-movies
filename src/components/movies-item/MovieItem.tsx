@@ -1,5 +1,4 @@
 import React from 'react';
-import { movie } from '../../interfaces/movies';
 import styles from './MovieItem.module.scss';
 
 function MovieItem(props: any) {
