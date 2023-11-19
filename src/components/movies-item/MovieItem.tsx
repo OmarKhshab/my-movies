@@ -3,7 +3,6 @@ import styles from './MovieItem.module.scss';
 
 function MovieItem(props: any) {
   const {movie , handleDeleteMovie } = props;
-  console.log(props);
   const handleDeleteCurrMovie = () => {
     handleDeleteMovie(movie);
   };

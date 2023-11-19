@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useReducer } from 'react';
 import { movie } from '../../interfaces/movies';
+import { actions, moviesReducer } from '../../reducers/movie-reducer';
 import MovieItem from '../movies-item/MovieItem';
 import styles from './MovieContainer.module.scss';
 
@@ -24,19 +25,15 @@ function MovieContainer() {
       image: 'https://www.justwatch.com/images/backdrop/108456304/s1440/avengers-endgame.webp/avengers-endgame.webp',
       id: 2,
   }];
-
+  const [moviesObj, dispatch] = useReducer(
+    moviesReducer,
+    movies
+  );
  const handledeleteMovie = (movie: movie) => {
-  console.log(movie.id)
-  const currentMovies = movies.filter((currMovie) => {
-    return currMovie.id !== movie.id;
-  })
-  movies = currentMovies;
-  
-  console.log(movies)
+  dispatch({type: actions.delete, id: movie.id})
 }
 const handleShowForm = ()=> {
   showForm = true;
-  console.log(showForm)
 }
 const handleSubmit =  (e: any) => {
   e.preventDefault();
@@ -46,20 +43,19 @@ const handleSubmit =  (e: any) => {
   const descpText = descpEle.value;
   const nameEle = document.getElementById('name')  as HTMLFormElement;
   const nameText = nameEle.value;
-  let newMovie: movie = {
+  let newMovie = {
     description: descpText,
     title: nameText,
     image: imgText,
-    id: movies[movies.length - 1].id +1
   };
-  movies.push(newMovie);
-  console.log(movies);
+  
+  dispatch({type: actions.add, movie: newMovie})
 };
   return (
     <Fragment>
     <div className={styles.body}>
       {
-        movies.map((currMovie) => ((
+        moviesObj.map((currMovie) => ((
           
           <MovieItem movie={currMovie} handleDeleteMovie={handledeleteMovie} key={currMovie.id}/>
           )))
