@@ -10,7 +10,7 @@ export function moviesReducer(movies: movie[], action: { type: string; movie?: a
         return movies.filter(movie => movie.id !== action.id);
       }
       case actions.changeCategory: {
-        const newMovie: any = movies.find(movie=> movie.id == action.id);
+        const newMovie: any = movies.find(movie=> movie.id === action.id);
         const index = movies.indexOf(newMovie);
         newMovie.category = action.category;
         const updatedMovies = movies;
