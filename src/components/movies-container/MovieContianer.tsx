@@ -88,7 +88,7 @@ function MovieContainer() {
     setCategory(e.target.value);
   }
   const ValidateName = (movieName: string) => {
-    const nameRegex = /^[a-zA-Z]{2,}$/;
+    const nameRegex = /^.{3,}$/;
     if (nameRegex.test(movieName)) {
       setName(movieName);
       setNameError(false);
@@ -98,7 +98,7 @@ function MovieContainer() {
     }
   }
   const ValidateDesription = (movieDescription: string) => {
-    const desriptionRegex = /^[a-zA-Z]{10,}$/;
+    const desriptionRegex = /^.{10,}$/;
     if (desriptionRegex.test(movieDescription)) {
       setDescription(movieDescription);
       setDescriptionError(false);
