@@ -1,0 +1,16 @@
+.search {
+    &__searchBar {
+        width: 98vw;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+}

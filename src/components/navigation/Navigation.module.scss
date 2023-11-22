@@ -7,6 +7,18 @@
     &__text {
         color:mediumpurple;
         font: 300;
-        padding: 5px
+        padding: 15px;
+        font-size:xx-large;
     };
+    &__links {
+        display: inline-flex;
+        list-style-type: none;
+        li {
+            margin: 15px;
+            a {
+                text-decoration: none;
+                color: purple;
+            }
+        }
+    }
 }
