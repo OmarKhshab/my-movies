@@ -209,7 +209,6 @@ const handleSubmit =  (e: any) => {
         <option value="0">watched</option>
       </select>
       </label>
-      {descriptionError && <span>please enter correct description</span>}
       <button className={styles.body__addBtn} disabled={nameError || descriptionError || imageError} type="submit">Submit</button>
     </form>}
     </Fragment>
