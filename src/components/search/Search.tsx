@@ -64,7 +64,7 @@ function Search() {
 }];
 const [filteredMovies, filterMovies] = useState(movies);
 const searchBook = (e: any)=> {
-  const moviesObj = filteredMovies.filter((currentMovie: movie)=> currentMovie.title.includes(e.target.value));
+  const moviesObj = movies.filter((currentMovie: movie)=> currentMovie.title.includes(e.target.value));
   filterMovies(moviesObj);
 }
   return (
